@@ -1,7 +1,6 @@
 package com.example.universityapplication.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,6 +11,10 @@ import java.util.Set;
 @Table(name = "university_group")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

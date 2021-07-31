@@ -1,7 +1,6 @@
 package com.example.universityapplication.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +10,9 @@ import java.util.Objects;
 @Table(name = "student")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
 
     @Id
