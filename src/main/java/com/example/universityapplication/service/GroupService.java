@@ -1,13 +1,14 @@
 package com.example.universityapplication.service;
 
-import com.example.universityapplication.dto.GroupDTO;
+import com.example.universityapplication.dto.response.GroupByIdResponseDTO;
+import com.example.universityapplication.dto.response.GroupResponseDTO;
 
 import java.util.List;
 
 public interface GroupService {
-    void add(GroupDTO groupDTO);
+    void add(GroupByIdResponseDTO groupByIdResponseDTO);
 
-    GroupDTO getGroupById(Long id);
+    GroupByIdResponseDTO getGroupById(Long id);
 
-    List<GroupDTO> getAllGroups();
+    List<GroupResponseDTO> getAllGroups();
 }

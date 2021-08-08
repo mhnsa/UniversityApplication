@@ -1,6 +1,8 @@
 package com.example.universityapplication.controller;
 
-import com.example.universityapplication.dto.GroupDTO;
+
+import com.example.universityapplication.dto.response.GroupByIdResponseDTO;
+import com.example.universityapplication.dto.response.GroupResponseDTO;
 import com.example.universityapplication.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -16,18 +18,18 @@ public class GroupController {
     @Qualifier("groupServiceImpl")
     private GroupService groupService;
 
-@PostMapping(path = "/groups")
-    public void add(@RequestBody GroupDTO groupDTO) {
-    groupService.add(groupDTO);
-}
+    @PostMapping(path = "/groups")
+    public void add(@RequestBody GroupByIdResponseDTO groupByIdResponseDTO) {
+        groupService.add(groupByIdResponseDTO);
+    }
 
-@GetMapping(path= "/groups/{id}")
-    public GroupDTO getGroupById(@PathVariable(name = "id") Long id) {
-    return groupService.getGroupById(id);
-}
+    @GetMapping(path = "/groups/{id}")
+    public GroupByIdResponseDTO getGroupById(@PathVariable(name = "id") Long id) {
+        return groupService.getGroupById(id);
+    }
 
-@GetMapping(path= "/groups")
-    public List<GroupDTO> getAllGroups() {
-    return groupService.getAllGroups();
+    @GetMapping(path = "/groups")
+    public List<GroupResponseDTO> getAllGroups() {
+        return groupService.getAllGroups();
     }
 }

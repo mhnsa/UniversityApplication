@@ -1,4 +1,5 @@
-package com.example.universityapplication.dto;
+package com.example.universityapplication.dto.request;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupDTO {
-    String name;
+public class StudentRequestDTO {
+    private Long groupId;
+    private String name;
+    private String surName;
 }
